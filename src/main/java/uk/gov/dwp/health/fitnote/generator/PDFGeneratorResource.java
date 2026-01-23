@@ -82,6 +82,7 @@ public class PDFGeneratorResource {
     } else {
       response = Response.status(Response.Status.BAD_REQUEST).build();
     }
+    response.getHeaders().add("Content-Type", "application/pdf");
     return response;
   }
 }

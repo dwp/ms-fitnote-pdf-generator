@@ -22,20 +22,11 @@ workflow:
       changes:
         compare_to: refs/heads/develop
         paths: ['**/*']
-      variables:
-        ENVIRONMENT: 'nonprodacct'
-      when: always
-    ####################################################################################
-    ### DEFAULT BRANCH                                                               ###
-    ####################################################################################
-    - if: '$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "web"'
-      variables:
-        ENVIRONMENT: 'nonprodacct'
       when: always
     ####################################################################################
     ### RELEASE BRANCHES - NONPROD CREDS                                             ###
     ####################################################################################
-    - if: '$CI_COMMIT_REF_NAME =~ /^[Rr]-.*$/ && $CI_PIPELINE_SOURCE != "schedule" && $PROD_AWS_ACCESS_KEY_ID == null && $PROD_AWS_SECRET_ACCESS_KEY == null && $PROD_AWS_SESSION_TOKEN == null'
+    - if: '$CI_COMMIT_REF_NAME =~ /^[Rr]-.*$/ && $CI_PIPELINE_SOURCE =~ /^(api|web)$/ && $CI_PIPELINE_SOURCE != "schedule" && $CR_NO == null'
       variables:
         ENVIRONMENT: 'nonprodacct'
         # job triggers
@@ -45,11 +36,13 @@ workflow:
     ####################################################################################
     ### RELEASE BRANCHES - PROD CREDS                                                ###
     ####################################################################################
-    - if: '$CI_COMMIT_REF_NAME =~ /^[Rr]-.*$/ && $CI_PIPELINE_SOURCE == "web" && $PROD_AWS_ACCESS_KEY_ID && $PROD_AWS_SECRET_ACCESS_KEY && $PROD_AWS_SESSION_TOKEN'
+    - if: '$CI_COMMIT_REF_NAME =~ /^[Rr]-.*$/ && $CI_PIPELINE_SOURCE =~ /^(api|web)$/ && $CR_NO != null'
       variables:
-        ENVIRONMENT: 'prodacct'
         # job triggers
         VERSION: "true"
+        PROD_RELEASE: "true"
+        #OIDC Config
+        ASSUME_ROLE_NAME: "$PRODUCT-build-prod"
         OPEN_SOURCE: "true"
       when: always
     ####################################################################################
@@ -57,7 +50,6 @@ workflow:
     ####################################################################################
     - if: '$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "schedule"'
       variables:
-        ENVIRONMENT: 'nonprodacct'
         # job triggers
         DOCUMENTATION: "true"
       when: always
@@ -66,7 +58,6 @@ workflow:
     ####################################################################################
     - if: '$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "push"' # the only push to default branch is on merge
       variables:
-        ENVIRONMENT: 'nonprodacct'
         # job triggers
         MERGE_TO_DEVELOP: "true"
         DOCUMENTATION: "true"

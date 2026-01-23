@@ -2,12 +2,6 @@
 ###    Jobs to assert the quality of commited code                                   ###
 ########################################################################################
 
-### ENVIRONMENT
-.environment: &environment
-  environment:
-    name: "$ENVIRONMENT"
-    action: prepare
-
 ### TRIGGERS
 .build: &build
   rules:
@@ -20,13 +14,11 @@
 ### CHECKS
 todo-check:
   extends: .todo-check-template
-  <<: *environment
   <<: *build
   needs: []
 
 shell-check:
   extends: .shell-check-template
-  <<: *environment
   <<: *build-not-merge
   needs: []
 

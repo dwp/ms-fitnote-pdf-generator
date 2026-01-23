@@ -2,12 +2,6 @@
 ###    Jobs to update the code version                                               ###
 ########################################################################################
 
-### ENVIRONMENT
-.environment: &environment
-  environment:
-    name: "$ENVIRONMENT"
-    action: prepare
-
 ### TRIGGERS
 .version: &version
   rules:
@@ -17,5 +11,4 @@
 check-semver:
   extends: .check-semver-maven-template
   allow_failure: true
-  <<: *environment
   <<: *version

@@ -3,10 +3,31 @@
     <suppress>
         <notes>
             <![CDATA[
-                file name: metrics-httpclient5-4.2.33.jar
+                file name: metrics-httpclient5-4.2.37.jar
             ]]></notes>
         <packageUrl regex="true">^pkg:maven/io\.dropwizard\.metrics/metrics\-httpclient5@.*$</packageUrl>
         <cve>CVE-2020-13956</cve>
         <cve>CVE-2014-3577</cve>
+    </suppress>
+    <suppress>
+        <notes>
+            <![CDATA[
+                file name: jetty-setuid-jna-2.0.3.jar
+            ]]>
+        </notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.jetty\.toolchain\.setuid/jetty\-setuid\-jna@.*$</packageUrl>
+        <cve>CVE-2022-2047</cve>
+        <cve>CVE-2022-2048</cve>
+        <cve>CVE-2020-27216</cve>
+        <cve>CVE-2017-7658</cve>
+        <cve>CVE-2017-7657</cve>
+        <cve>CVE-2017-7656</cve>
+        <cve>CVE-2017-9735</cve>
+        <cve>CVE-2021-28169</cve>
+        <cve>CVE-2023-26048</cve>
+        <cve>CVE-2023-26049</cve>
+        <cve>CVE-2009-5046</cve>
+        <cve>CVE-2009-5045</cve>
+        <cve>CVE-2023-44487</cve>
     </suppress>
 </suppressions>

@@ -8,6 +8,6 @@ variables:
   REPO_PATTERN: "V3.1 CI"
   # Config
   BUILD_TYPE:  "MAVEN"
-  MAVEN_IMAGE: "maven:3-amazoncorretto-17"
+  MAVEN_IMAGE: "nexus.nonprod.dwpcloud.uk/docker/maven@sha256:e4a7ace3dc0d645ed97f8d9ad0b0d3f0b14fa8d150138f27f116d7105a639b82"
   MVN_OPTS: "-DLOG_LEVEL=INFO"
   MVN_CLI_OPTS: "--batch-mode"
