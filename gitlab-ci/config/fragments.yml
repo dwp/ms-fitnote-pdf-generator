@@ -57,7 +57,7 @@ include:
     file: 'ci-include-container-structure-test-base.yml'
     #image-push
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/push-to-ecr'
-    ref: 5.0.4
+    ref: 5.0.5
     file: 'ci-include-push-to-ecr-base.yml'
     #update-project-metadata
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/create-project-badges'

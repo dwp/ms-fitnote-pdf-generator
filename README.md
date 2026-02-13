@@ -82,13 +82,3 @@ Config sits in maven-version-rules.xml
 **To apply plugin & dependency updates (update all dependencies)**
 `mvn versions:update-properties -DgenerateBackupPoms=false`
 
-## Scripts
-
-Scripts to speed up general maintenance
-Strongly recommended to run before pushing
-
-**Update catalog-info**
-`./updateCatalogInfo.sh`
-
-**Run mvn jobs that run in gitlab**
-`./mvnCheck.sh`

@@ -26,7 +26,7 @@ workflow:
     ####################################################################################
     ### RELEASE BRANCHES - NONPROD CREDS                                             ###
     ####################################################################################
-    - if: '$CI_COMMIT_REF_NAME =~ /^[Rr]-.*$/ && $CI_PIPELINE_SOURCE =~ /^(api|web)$/ && $CI_PIPELINE_SOURCE != "schedule" && $CR_NO == null'
+    - if: '$CI_COMMIT_REF_NAME =~ /^[Rr]-.*$/ && $CI_PIPELINE_SOURCE =~ /^(api|web|push)$/ && $CI_PIPELINE_SOURCE != "schedule" && $CR_NO == null'
       variables:
         ENVIRONMENT: 'nonprodacct'
         # job triggers
