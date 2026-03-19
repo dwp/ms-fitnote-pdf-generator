@@ -30,4 +30,68 @@
         <cve>CVE-2009-5045</cve>
         <cve>CVE-2023-44487</cve>
     </suppress>
+    <suppress>
+        <notes>
+            <![CDATA[
+                file name: jetty-io-11.0.26.jar
+            ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.jetty/jetty\-io@.*$</packageUrl>
+        <cve>CVE-2025-11143</cve>
+    </suppress>
+    <suppress>
+        <notes>
+            <![CDATA[
+                file name: jetty-http-11.0.26.jar
+            ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.jetty/jetty\-http@.*$</packageUrl>
+        <cve>CVE-2025-11143</cve>
+    </suppress>
+    <suppress>
+        <notes>
+            <![CDATA[
+                file name: jetty-server-11.0.26.jar
+            ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.jetty/jetty\-server@.*$</packageUrl>
+        <cve>CVE-2025-11143</cve>
+    </suppress>
+    <suppress>
+        <notes>
+            <![CDATA[
+                file name: jetty-util-11.0.26.jar
+            ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.jetty/jetty\-util@.*$</packageUrl>
+        <cve>CVE-2025-11143</cve>
+    </suppress>
+    <suppress>
+        <notes>
+            <![CDATA[
+                file name: jetty-server-11.0.26.jar
+            ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.jetty/jetty\-server@.*$</packageUrl>
+        <cve>CVE-2025-11143</cve>
+    </suppress>
+    <suppress>
+        <notes>
+            <![CDATA[
+                file name: jetty-servlet-11.0.26.jar
+            ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.jetty/jetty\-servlet@.*$</packageUrl>
+        <cve>CVE-2025-11143</cve>
+    </suppress>
+    <suppress>
+        <notes>
+            <![CDATA[
+                file name: jetty-security-11.0.26.jar
+            ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.jetty/jetty\-security@.*$</packageUrl>
+        <cve>CVE-2025-11143</cve>
+    </suppress>
+    <suppress>
+        <notes>
+            <![CDATA[
+                file name: jetty-servlets-11.0.26.jar
+            ]]></notes>
+        <packageUrl regex="true">^pkg:maven/org\.eclipse\.jetty/jetty\-servlets@.*$</packageUrl>
+        <cve>CVE-2025-11143</cve>
+    </suppress>
 </suppressions>
