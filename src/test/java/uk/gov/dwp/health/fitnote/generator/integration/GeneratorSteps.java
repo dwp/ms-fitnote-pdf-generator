@@ -9,11 +9,12 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.hc.client5.http.classic.HttpClient;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
-import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
+import org.apache.hc.client5.http.config.RequestConfig;
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
 import org.apache.hc.client5.http.utils.Base64;
 import org.apache.hc.core5.http.ClassicHttpResponse;
+import org.apache.hc.core5.http.ContentType;
 import org.apache.hc.core5.http.HttpEntity;
 import org.apache.hc.core5.http.io.entity.StringEntity;
 
@@ -128,8 +129,14 @@ public class GeneratorSteps {
      * PRIVATE METHODS
      */
     private void performHttpPostWithUriOf(String uri, String body) throws IOException {
+        RequestConfig requestConfig = RequestConfig.custom()
+                .setExpectContinueEnabled(true)
+                .build();
+
         HttpPost httpUriRequest = new HttpPost(uri);
-        HttpEntity entity = new StringEntity(body);
+        httpUriRequest.setConfig(requestConfig);
+
+        HttpEntity entity = new StringEntity(body, ContentType.APPLICATION_JSON);
         httpUriRequest.setEntity(entity);
 
         generatedResponse = (ClassicHttpResponse) httpClient.execute(httpUriRequest);

@@ -15,7 +15,7 @@
 
 maven-cucumber:
   extends: .docker-compose-run-template
-  image: nexus.nonprod.dwpcloud.uk/docker/docker:29.0.4@sha256:c9699f4fc7365e8daad3eb48ce3b62dc118b2a5267f7be7bcd3c4e4b2f1cfb4c
+  image: nexus.nonprod.dwpcloud.uk/docker/docker:29.4.0@sha256:a6dd5322747a95cd8e3207bd8d415a8fd20ec34e9c00f06dc019cbd912013489
   stage: code-test
   variables:
     DOCKER_COMPOSE_FILE: "docker-compose.yml"
