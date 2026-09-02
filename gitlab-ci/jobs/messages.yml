@@ -10,7 +10,7 @@
 
 ### post fragment updated versions to slack channel
 fragment-messages:
-  image: nexus.nonprod.dwpcloud.uk/docker/bash:5@sha256:38697a8e277c4b61f75193f003db16590eda7b096577dd1c2be53afa207954e7
+  image: nexus.nonprod.dwpcloud.uk/docker/bash:5@sha256:a19c811ee9e97fa8a080001d82b8e0ded303f0795cffdb1cbd162731bc8ce208
   tags:
     - dwp-aws-x86-linux-l
   <<: *merge-to-develop

@@ -1,7 +1,7 @@
 include:
   #.pre
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/fragment-version-check'
-    ref: 2.4.6
+    ref: 2.4.7
     file: 'ci-include-fragment-version-check-base.yml'
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/required-fragment-check'
     ref: 2.17.2
@@ -46,11 +46,11 @@ include:
     file: 'ci-include-maven-api-spotbugs-base.yml'
     #image-build
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/docker-build'
-    ref: 6.1.0
+    ref: 6.2.2
     file: 'ci-include-docker-build-base.yml'
     #container-image-test
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/trivy-container-check'
-    ref: 2.23.1
+    ref: 2.24.0
     file: 'ci-include-trivy-container-check-base.yml'
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/container-structure-test'
     ref: 2.10.1
@@ -61,7 +61,7 @@ include:
     file: 'ci-include-push-to-ecr-base.yml'
     #update-project-metadata
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/create-project-badges'
-    ref: 2.5.1
+    ref: 2.5.2
     file: 'ci-include-create-project-badges-base.yml'
     #pages
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/pages-tech-docs'
@@ -73,7 +73,7 @@ include:
     file: 'ci-include-open-source-base.yml'
     #create-schedules
   - project: 'dwp/engineering/pipeline-solutions/gitlab/fragments/schedule-creation'
-    ref: 2.7.4
+    ref: 2.7.5
     file: 'ci-include-schedule-creation-base.yml'
   - project: 'dwp/health/shared-tooling/gitlab-oidc-credentials'
     ref: 2.1.2
